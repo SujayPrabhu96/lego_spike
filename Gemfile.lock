@@ -1,3 +1,9 @@
+PATH
+  remote: packages/orders
+  specs:
+    orders (0.1.0)
+      rails (>= 7.1.3.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -275,6 +281,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  orders!
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.3, >= 7.1.3.4)
