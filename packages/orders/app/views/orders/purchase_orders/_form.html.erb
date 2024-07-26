@@ -1,0 +1,57 @@
+<%= form_with(model: purchase_order) do |form| %>
+  <% if purchase_order.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(purchase_order.errors.count, "error") %> prohibited this purchase_order from being saved:</h2>
+
+      <ul>
+        <% purchase_order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :order_number, style: "display: block" %>
+    <%= form.text_field :order_number %>
+  </div>
+
+  <div>
+    <%= form.label :external_order_id, style: "display: block" %>
+    <%= form.text_field :external_order_id %>
+  </div>
+
+  <div>
+    <%= form.label :type, style: "display: block" %>
+    <%= form.text_field :type %>
+  </div>
+
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div>
+    <%= form.label :business_unit, style: "display: block" %>
+    <%= form.text_field :business_unit %>
+  </div>
+
+  <div>
+    <%= form.label :order_date, style: "display: block" %>
+    <%= form.date_field :order_date %>
+  </div>
+
+  <div>
+    <%= form.label :receipt_date, style: "display: block" %>
+    <%= form.date_field :receipt_date %>
+  </div>
+
+  <div>
+    <%= form.label :estimated_lpn, style: "display: block" %>
+    <%= form.number_field :estimated_lpn %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
