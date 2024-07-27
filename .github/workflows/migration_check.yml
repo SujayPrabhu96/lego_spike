@@ -1,0 +1,29 @@
+name: Migration Check
+
+on:
+  push:
+    paths:
+      - 'packages/**/db/migrate/*'
+      - 'db/migrate/*'
+  pull_request:
+    paths:
+      - 'packages/**/db/migrate/*'
+      - 'db/migrate/*'
+
+jobs:
+  migration-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0' # Specify the Ruby version your project uses
+
+      - name: Check for migration changes
+        run: ./scripts/check_migrations.sh
