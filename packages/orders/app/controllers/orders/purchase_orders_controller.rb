@@ -54,7 +54,7 @@ module Orders
 
       # Only allow a list of trusted parameters through.
       def purchase_order_params
-        params.require(:purchase_order).permit(:order_number, :external_order_id, :type, :status, :business_unit, :order_date, :receipt_date, :estimated_lpn)
+        params.require(:purchase_order).permit(:order_number, :external_order_id, :order_type, :status, :business_unit, :order_date, :receipt_date, :estimated_lpn)
       end
   end
 end

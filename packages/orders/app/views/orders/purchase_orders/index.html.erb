@@ -2,13 +2,33 @@
 
 <h1>Purchase orders</h1>
 
-<div id="purchase_orders">
-  <% @purchase_orders.each do |purchase_order| %>
-    <%= render purchase_order %>
-    <p>
-      <%= link_to "Show this purchase order", purchase_order %>
-    </p>
-  <% end %>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Date</th>
+      <th>External Order No.</th>
+      <th>Status</th>
+      <th>BU</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="purchase_orders">
+    <% @purchase_orders.each do |purchase_order| %>
+      <tr>
+        <td><%= purchase_order.id %></td>
+        <td><%= purchase_order.order_date %></td>
+        <td><%= purchase_order.external_order_id %></td>
+        <td><%= purchase_order.status %></td>
+        <td><%= purchase_order.business_unit %></td>
+        <td>
+          <%= link_to "Show", purchase_order %>
+          <%= link_to "Edit", edit_purchase_order_path(purchase_order) %>
+          <%= link_to "Delete", purchase_order, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to "New purchase order", new_purchase_order_path %>
