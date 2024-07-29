@@ -5,6 +5,8 @@
 
   <% content_for :title, "Warehouses" %>
 
+  <%= render 'shared/button', button_path: "orders/purchase_orders" %>
+
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">Warehouses</h1>
     <%= link_to "New warehouse", new_warehouse_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
