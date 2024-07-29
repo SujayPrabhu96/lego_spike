@@ -1,0 +1,36 @@
+<!-- app/views/shared/_navigation.html.erb -->
+<nav class="navbar">
+  <ul class="navbar-menu">
+    <li class="navbar-item"><%= link_to 'Home', "#", class: 'navbar-link' %></li>
+    <li class="navbar-item"><%= link_to 'About', "#", class: 'navbar-link' %></li>
+    <li class="navbar-item"><%= link_to 'Contact', "#", class: 'navbar-link' %></li>
+  </ul>
+</nav>
+
+<style>
+  .navbar {
+    background-color: #333;
+    padding: 10px 20px;
+  }
+
+  .navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .navbar-item {
+    margin-right: 20px;
+  }
+
+  .navbar-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .navbar-link:hover {
+    text-decoration: underline;
+  }
+</style>
