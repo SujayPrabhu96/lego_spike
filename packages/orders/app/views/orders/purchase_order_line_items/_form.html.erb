@@ -1,0 +1,62 @@
+<%= form_with(model: purchase_order_line_item) do |form| %>
+  <% if purchase_order_line_item.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(purchase_order_line_item.errors.count, "error") %> prohibited this purchase_order_line_item from being saved:</h2>
+
+      <ul>
+        <% purchase_order_line_item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :line_number, style: "display: block" %>
+    <%= form.number_field :line_number %>
+  </div>
+
+  <div>
+    <%= form.label :sku_code, style: "display: block" %>
+    <%= form.text_field :sku_code %>
+  </div>
+
+  <div>
+    <%= form.label :sku_description, style: "display: block" %>
+    <%= form.text_field :sku_description %>
+  </div>
+
+  <div>
+    <%= form.label :uom, style: "display: block" %>
+    <%= form.text_field :uom %>
+  </div>
+
+  <div>
+    <%= form.label :ordered_qty, style: "display: block" %>
+    <%= form.number_field :ordered_qty %>
+  </div>
+
+  <div>
+    <%= form.label :received_qty, style: "display: block" %>
+    <%= form.number_field :received_qty %>
+  </div>
+
+  <div>
+    <%= form.label :sku_holdcode, style: "display: block" %>
+    <%= form.text_field :sku_holdcode %>
+  </div>
+
+  <div>
+    <%= form.label :sku_type, style: "display: block" %>
+    <%= form.text_field :sku_type %>
+  </div>
+
+  <div>
+    <%= form.label :purchase_orders_id, style: "display: block" %>
+    <%= form.text_field :purchase_orders_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
